@@ -1,4 +1,4 @@
-let process = require(process)
+let process = require("process");
 let appInsights = require("applicationinsights");
 appInsights.setup("process.env.APPLICATIONINSIGHTS_CONNECTION_STRING")
     .setAutoDependencyCorrelation(true)
