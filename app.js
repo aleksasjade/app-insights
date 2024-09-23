@@ -1,5 +1,6 @@
+let process = require(process)
 let appInsights = require("applicationinsights");
-appInsights.setup("InstrumentationKey=48d45e9e-527d-4d5c-aa05-2b0e1af356a0;IngestionEndpoint=https://australiaeast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://australiaeast.livediagnostics.monitor.azure.com/;ApplicationId=e737b2ca-e732-4ba9-873c-3fdf0945eb9d")
+appInsights.setup("process.env.APPLICATIONINSIGHTS_CONNECTION_STRING")
     .setAutoDependencyCorrelation(true)
     .setAutoCollectRequests(true)
     .setAutoCollectPerformance(true, true)
@@ -20,6 +21,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const process = require("process");
 
 var app = express();
 
